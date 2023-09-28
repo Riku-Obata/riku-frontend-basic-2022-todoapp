@@ -8,6 +8,5 @@ export const Example = () => {
 };
 
 const StyledText = styled.div`
-  color: ${COLOR.WHITE};
-  ${TEXTS.S}
+  color: 
 `;
