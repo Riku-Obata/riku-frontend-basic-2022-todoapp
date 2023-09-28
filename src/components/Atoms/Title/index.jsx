@@ -1,5 +1,4 @@
 import styled from "styled-components";
-
 import React from "react";
 import COLOR from "../../../variables/color";
 import FONTFAMILY from "../../../variables/font_family";
@@ -18,20 +17,3 @@ const StyledText = styled.div `
     ${TEXT.M};
   }
 `;
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
-
-
-
