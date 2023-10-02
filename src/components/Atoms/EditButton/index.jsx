@@ -31,4 +31,3 @@ const Button = styled.button`
    background-color: ${COLOR.LIGHT_GRAY_TRANSLUCENT};
  }
 `;
-
