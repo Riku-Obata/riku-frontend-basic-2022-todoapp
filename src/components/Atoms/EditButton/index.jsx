@@ -29,5 +29,6 @@ const Button = styled.button`
  
  :hover{
    background-color: ${COLOR.LIGHT_GRAY_TRANSLUCENT};
+   cursor: pointer;
  }
 `;
