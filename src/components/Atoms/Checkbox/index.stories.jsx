@@ -1,6 +1,6 @@
-import { EditButton } from "./index";
+import { Checkbox } from "./index";
 
-export default { component: EditButton };
+export default { component: Checkbox };
 
 export const Default = {
   args: {
