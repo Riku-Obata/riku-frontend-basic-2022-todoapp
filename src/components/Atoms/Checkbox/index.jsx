@@ -16,6 +16,7 @@ const Button = styled.button`
   display: flex;
   width: 20px;
   height: 20px;
+  padding: 0;
   justify-content: center;
   align-items: center;
   flex-shrink: 0;
@@ -24,4 +25,14 @@ const Button = styled.button`
   border-radius: 2px;
   transition: 0.2s;
   cursor: pointer;
+
+  .imgCheck {
+    display: none;
+    width: 100%;
+    height: 100%;
+  }
+
+  :hover .imgCheck {
+    display: block;
+  }
 `;
