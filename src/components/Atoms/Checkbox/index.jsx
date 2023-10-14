@@ -6,7 +6,9 @@ import COLOR from "../../../variables/color";
 export const Checkbox = ({ onClick }) => {
   return (
     <Button onClick={onClick}>
-      <img src={check} className="imgCheck" />
+      <ImgCheck>
+        <img src={check} className="checkSize" />
+      </ImgCheck>
     </Button>
   );
 };
@@ -26,13 +28,18 @@ const Button = styled.button`
   transition: 0.2s;
   cursor: pointer;
 
-  .imgCheck {
-    display: none;
-    width: 100%;
-    height: 100%;
-  }
-
-  :hover .imgCheck {
+  :hover .checkSize {
     display: block;
+  }
+`;
+
+const ImgCheck = styled.div`
+  width: 17px;
+  height: 17px;
+
+  .checkSize {
+    width: 17px;
+    height: 17px;
+    display: none;
   }
 `;
