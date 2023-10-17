@@ -1,6 +1,8 @@
-import { input } from "./index";
+import { Input } from "./index";
+import { onEditComplete } from "./index";
+import { defaultValue } from "./index";
 
-export default { component: input };
+export default { component: Input };
 
 export const Default = {
   args: {
