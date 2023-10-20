@@ -2,14 +2,9 @@ import { Input } from "./index";
 
 export default { component: Input };
 
-export const onEditComplete = {
+export const Default = {
   args: {
     onEditComplete: () => <input type="text" />,
-  },
-};
-
-export const defaultValue = {
-  args: {
     defaultValue: () => <input type="text" />,
   },
 };
