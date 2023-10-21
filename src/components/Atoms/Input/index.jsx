@@ -10,10 +10,18 @@ export const Input = (props) => {
     const handleChange = (e) => {};
   });
 
-  return (
-    <StyledInput>
-      <input defaultValue={props.default} type="text" ref={inputRef} />
-    </StyledInput>
-  );
+  return <StyledInput defaultValue={props.default} ref={inputRef} />;
 };
 export default Input;
+
+const StyledInput = styled.input`
+  width: 100%;
+  height: 20px;
+  padding: 0px 4px;
+  background: ${COLOR.BLACK};
+  color: ${COLOR.LIGHT_GRAY};
+  ${TEXT.S};
+  border: 0;
+  outline: none;
+  border-radius: 2px;
+`;
