@@ -7,8 +7,19 @@ export const Input = ({ onEditComplete, defaultValue }) => {
   const inputRef = useRef(null);
 
   useEffect(() => {
-    const handleChange = (e) => {};
-  });
+    inputRef.current.value = defaultValue;
+
+    inputRef.current.focus();
+    inputRef.current.onblur = () => {
+      onEditComplete(inputRef.current.value);
+    };
+
+    inputRef.current.onkeydown = (e) => {
+      if (e.key === "Enter") {
+        onEditComplete(inputRef.current.value);
+      }
+    };
+  }, []);
 
   return <StyledInput ref={inputRef} type="text" />;
 };

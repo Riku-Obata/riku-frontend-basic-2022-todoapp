@@ -4,7 +4,9 @@ export default { component: Input };
 
 export const Default = {
   args: {
-    onEditComplete: () => <input type="text" />,
-    defaultValue: () => <input default="" />,
+    onEditComplete: (value) => {
+      console.log("edit complete:" + value);
+    },
+    defaultValue: "",
   },
 };
