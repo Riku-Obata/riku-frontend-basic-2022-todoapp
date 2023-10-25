@@ -47,6 +47,7 @@ const StyledWrapper = styled.div`
   align-items: center;
   gap: 10px;
 `;
+
 const StyledCheckboxWrapper = styled.div`
   display: flex;
   width: 20px;
@@ -54,18 +55,21 @@ const StyledCheckboxWrapper = styled.div`
   justify-content: center;
   align-items: center;
 `;
+
 const StyledNameAndButtonWrapper = styled.div`
   display: flex;
   width: 100%;
   align-items: flex-start;
   gap: 10px;
 `;
+
 const StyledTaskName = styled.div`
   display: flex;
   padding: 0px 4px;
   flex-direction: column;
   flex: 1 0 0;
 `;
+
 const StyledEditButtonWrapper = styled.div`
   display: flex;
   width: 20px;
