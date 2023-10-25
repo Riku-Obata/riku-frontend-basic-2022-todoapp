@@ -13,25 +13,37 @@ export const Task = ({
   defaultIsEditing,
 }) => {
   const [isEditing, useIsEditing] = useState(defaultIsEditing);
+
+  const onEditComplete = (value) => {
+    useIsEditing(false);
+    onTaskNameChange(value);
+  };
+
+  const onEditButtonClick = () => {
+    useIsEditing(true);
+  };
   return (
     <StyledWrapper>
       <StyledCheckboxWrapper>
         <Checkbox onClick={onTaskComplete} />
-        <script>
-          if (isEditing === true)
-          {<Input onEditComplete={onEditComplete} defaultValue={taskName} />}
-          else
-          {
-            <StyledNameAndButtonWrapper>
-              <StyledTaskName>{taskName}</StyledTaskName>
-              <StyledEditButtonWrapper>
-                <EditButton onClick={onEditButtonClick} />
-              </StyledEditButtonWrapper>
-            </StyledNameAndButtonWrapper>
-          }
-        </script>
       </StyledCheckboxWrapper>
+      {isEditing ? (
+        <Input onEditComplete={onEditComplete} defaultValue={taskName} />
+      ) : (
+        <StyledNameAndButtonWrapper>
+          <StyledTaskName>{taskName}</StyledTaskName>
+          <StyledEditButtonWrapper>
+            <EditButton onClick={onEditButtonClick} />
+          </StyledEditButtonWrapper>
+        </StyledNameAndButtonWrapper>
+      )}
     </StyledWrapper>
   );
 };
 export default Task;
+
+const StyledWrapper = styled.div``;
+const StyledCheckboxWrapper = styled.div``;
+const StyledNameAndButtonWrapper = styled.div``;
+const StyledTaskName = styled.div``;
+const StyledEditButtonWrapper = styled.div``;
