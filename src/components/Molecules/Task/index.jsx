@@ -3,8 +3,6 @@ import React, { useState } from "react";
 import Checkbox from "../../Atoms/Checkbox";
 import EditButton from "../../Atoms/EditButton";
 import Input from "../../Atoms/Input";
-import COLOR from "../../../variables/color";
-import TEXT from "../../../variables/texts";
 
 export const Task = ({
   onTaskNameChange,
@@ -22,6 +20,7 @@ export const Task = ({
   const onEditButtonClick = () => {
     useIsEditing(true);
   };
+
   return (
     <StyledWrapper>
       <StyledCheckboxWrapper>
@@ -42,8 +41,33 @@ export const Task = ({
 };
 export default Task;
 
-const StyledWrapper = styled.div``;
-const StyledCheckboxWrapper = styled.div``;
-const StyledNameAndButtonWrapper = styled.div``;
-const StyledTaskName = styled.div``;
-const StyledEditButtonWrapper = styled.div``;
+const StyledWrapper = styled.div`
+  display: flex;
+  padding: 2px 6px;
+  align-items: center;
+  gap: 10px;
+`;
+const StyledCheckboxWrapper = styled.div`
+  display: flex;
+  width: 20px;
+  height: 20px;
+  justify-content: center;
+  align-items: center;
+`;
+const StyledNameAndButtonWrapper = styled.div`
+  display: flex;
+  width: 100%;
+  align-items: flex-start;
+  gap: 10px;
+`;
+const StyledTaskName = styled.div`
+  display: flex;
+  padding: 0px 4px;
+  flex-direction: column;
+  flex: 1 0 0;
+`;
+const StyledEditButtonWrapper = styled.div`
+  display: flex;
+  width: 20px;
+  height: 20px;
+`;
