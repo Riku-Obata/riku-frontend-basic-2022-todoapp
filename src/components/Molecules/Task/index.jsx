@@ -3,6 +3,9 @@ import React, { useState } from "react";
 import Checkbox from "../../Atoms/Checkbox";
 import EditButton from "../../Atoms/EditButton";
 import Input from "../../Atoms/Input";
+import TEXT from "../../../variables/texts";
+import FONTFAMILY from "../../../variables/font_family";
+import COLOR from "../../../variables/color";
 
 export const Task = ({
   onTaskNameChange,
@@ -68,6 +71,9 @@ const StyledTaskName = styled.div`
   padding: 0px 4px;
   flex-direction: column;
   flex: 1 0 0;
+  ${TEXT.S};
+  color: ${COLOR.LIGHT_GRAY};
+  fontfamily: ${FONTFAMILY.NOTO_SANS};
 `;
 
 const StyledEditButtonWrapper = styled.div`
