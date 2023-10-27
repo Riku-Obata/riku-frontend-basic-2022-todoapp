@@ -7,8 +7,8 @@ import Input from "../../Atoms/Input";
 export const Task = ({
   onTaskNameChange,
   onTaskComplete,
-  taskName,
-  defaultIsEditing,
+  taskName = "",
+  defaultIsEditing = false,
 }) => {
   const [isEditing, useIsEditing] = useState(defaultIsEditing);
 
