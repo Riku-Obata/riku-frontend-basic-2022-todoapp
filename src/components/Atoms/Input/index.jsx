@@ -10,13 +10,13 @@ export const Input = ({ onEditComplete, defaultValue }) => {
     inputRef.current.value = defaultValue;
 
     inputRef.current.focus();
-    inputRef.current.onblur = () => {
-      onEditComplete(inputRef.current.value);
+    inputRef.current.onblur = (e) => {
+      onEditComplete(e.target.value);
     };
 
     inputRef.current.onkeydown = (e) => {
       if (e.key === "Enter") {
-        onEditComplete(inputRef.current.value);
+        onEditComplete(e.target.value);
       }
     };
   }, []);
