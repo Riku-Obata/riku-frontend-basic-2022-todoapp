@@ -13,15 +13,15 @@ export const Task = ({
   taskName = "",
   defaultIsEditing = false,
 }) => {
-  const [isEditing, useIsEditing] = useState(defaultIsEditing);
+  const [isEditing, setIsEditing] = useState(defaultIsEditing);
 
   const onEditComplete = (value) => {
-    useIsEditing(false);
+    setIsEditing(false);
     onTaskNameChange(value);
   };
 
   const onEditButtonClick = () => {
-    useIsEditing(true);
+    setIsEditing(true);
   };
 
   return (
