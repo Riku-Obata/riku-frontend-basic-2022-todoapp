@@ -11,15 +11,16 @@ export const TodoCard = () => {
   };
 
   const onTaskComplete = (index) => {
-    setTaskList(taskList.filter(index));
+    const copyOnTaskComplete = taskList.filter((element, idx) => index !== idx);
+    setTaskList(copyOnTaskComplete);
   };
 
   const onTaskNameChange = (value, index) => {
     if (value === "") {
-      setTaskList(taskList.filter(index));
-    } else value !== "";
-    {
-      setTaskList(taskList.map(index));
+      const copyOnTaskNameChange = taskList.filter((_, idx) => idx !== index);
+      setTaskList(copyOnTaskNameChange);
+    } else {
+      taskList[index].name = value;
     }
   };
 
@@ -30,8 +31,8 @@ export const TodoCard = () => {
         {taskList.map((task, index) => (
           <Task
             key={index}
-            onTaskComplete={onTaskComplete(index)}
-            onTaskNameChange={onTaskNameChange(value, index)}
+            onTaskComplete={() => onTaskComplete(index)}
+            onTaskNameChange={(value) => onTaskNameChange(value, index)}
             taskName={task.name}
             defaultIsEditing={task.initializing}
           />
