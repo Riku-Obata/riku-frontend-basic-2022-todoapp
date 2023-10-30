@@ -2,6 +2,8 @@ import styled from "styled-components";
 import React, { useState } from "react";
 import Task from "../../Molecules/Task";
 import AddTaskButton from "../../Atoms/AddTaskButton";
+import COLOR from "../../../variables/color";
+import FONTFAMILY from "../../../variables/font_family";
 
 export const TodoCard = () => {
   const [taskList, setTaskList] = useState([]);
@@ -20,7 +22,9 @@ export const TodoCard = () => {
       const copyOnTaskNameChange = taskList.filter((_, idx) => idx !== index);
       setTaskList(copyOnTaskNameChange);
     } else {
-      taskList[index].name = value;
+      const cpOnTaskNameChange = [...taskList];
+      cpOnTaskNameChange[index].name = value;
+      setTaskList(cpOnTaskNameChange);
     }
   };
 
@@ -43,5 +47,19 @@ export const TodoCard = () => {
 };
 export default TodoCard;
 
-const StyledWrapper = styled.div``;
-const StyledTaskList = styled.div``;
+const StyledWrapper = styled.div`
+  display: flex;
+  padding: 20px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  border-radius: 4px;
+  background-color: ${COLOR.LIGHT_BLACK};
+`;
+
+const StyledTaskList = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-self: stretch;
+  font-family: ${FONTFAMILY.NOTO_SANS};
+`;
