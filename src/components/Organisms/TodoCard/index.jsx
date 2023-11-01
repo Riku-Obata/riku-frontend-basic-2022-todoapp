@@ -33,13 +33,15 @@ export const TodoCard = () => {
       <AddTaskButton onClick={onAddTaskButtonClick} />
       <StyledTaskList>
         {taskList.map((task, index) => (
-          <Task
-            key={index}
-            onTaskComplete={() => onTaskComplete(index)}
-            onTaskNameChange={(value) => onTaskNameChange(value, index)}
-            taskName={task.name}
-            defaultIsEditing={task.initializing}
-          />
+          <TaskGap>
+            <Task
+              key={index}
+              onTaskComplete={() => onTaskComplete(index)}
+              onTaskNameChange={(value) => onTaskNameChange(value, index)}
+              taskName={task.name}
+              defaultIsEditing={task.initializing}
+            />
+          </TaskGap>
         ))}
       </StyledTaskList>
     </StyledWrapper>
@@ -52,7 +54,6 @@ const StyledWrapper = styled.div`
   padding: 20px;
   flex-direction: column;
   align-items: flex-start;
-  gap: 10px;
   border-radius: 4px;
   background-color: ${COLOR.LIGHT_BLACK};
 `;
@@ -62,4 +63,8 @@ const StyledTaskList = styled.div`
   flex-direction: column;
   align-self: stretch;
   font-family: ${FONTFAMILY.NOTO_SANS};
+`;
+
+const TaskGap = styled.div`
+  margin-top: 10px;
 `;
