@@ -13,18 +13,20 @@ export const TodoCard = () => {
   };
 
   const onTaskComplete = (index) => {
-    const copyOnTaskComplete = taskList.filter((element, idx) => index !== idx);
-    setTaskList(copyOnTaskComplete);
+    const filteredTasklist = taskList.filter((element, idx) => index !== idx);
+    setTaskList(filteredTasklist);
   };
 
   const onTaskNameChange = (value, index) => {
     if (value === "") {
-      const copyOnTaskNameChange = taskList.filter((_, idx) => idx !== index);
-      setTaskList(copyOnTaskNameChange);
+      const filteredOnTaskNameChange = taskList.filter(
+        (_, idx) => idx !== index
+      );
+      setTaskList(filteredOnTaskNameChange);
     } else {
-      const cpOnTaskNameChange = [...taskList];
-      cpOnTaskNameChange[index].name = value;
-      setTaskList(cpOnTaskNameChange);
+      const mappedOnTaskNameChange = [...taskList];
+      mappedOnTaskNameChange[index].name = value;
+      setTaskList(mappedOnTaskNameChange);
     }
   };
 
