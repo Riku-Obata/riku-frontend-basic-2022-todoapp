@@ -2,6 +2,7 @@ import styled from "styled-components";
 import React, { useRef, useEffect } from "react";
 import COLOR from "../../../variables/color";
 import TEXT from "../../../variables/texts";
+import FONTFAMILY from "../../../variables/font_family";
 
 export const Input = ({ onEditComplete, defaultValue }) => {
   const inputRef = useRef(null);
@@ -30,7 +31,8 @@ const StyledInput = styled.input`
   padding: 0px 4px;
   background: ${COLOR.BLACK};
   color: ${COLOR.LIGHT_GRAY};
-  ${TEXT.S}
+  ${TEXT.S};
+  font-family: ${FONTFAMILY.NOTO_SANS};
   border: none;
   outline: none;
   border-radius: 2px;

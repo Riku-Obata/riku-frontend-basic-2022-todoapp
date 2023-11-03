@@ -73,7 +73,8 @@ const StyledTaskName = styled.div`
   flex: 1 0 0;
   ${TEXT.S};
   color: ${COLOR.LIGHT_GRAY};
-  fontfamily: ${FONTFAMILY.NOTO_SANS};
+  font-family: ${FONTFAMILY.NOTO_SANS};
+  gap: 10px;
 `;
 
 const StyledEditButtonWrapper = styled.div`
