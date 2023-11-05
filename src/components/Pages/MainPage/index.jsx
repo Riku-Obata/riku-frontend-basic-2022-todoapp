@@ -31,10 +31,9 @@ const StyledWrapperTodoCard = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-  margin-top: 10px;
+  margin-top: 20px;
 
   @media screen and (min-width: ${BREAKPOINT.MEDIUM}) {
     max-width: 500px;
-    margin-top: 20px;
   }
 `;
