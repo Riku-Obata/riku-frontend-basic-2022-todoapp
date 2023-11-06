@@ -64,17 +64,20 @@ const StyledNameAndButtonWrapper = styled.div`
   width: 100%;
   align-items: flex-start;
   gap: 10px;
+  overflow: hidden;
 `;
 
 const StyledTaskName = styled.div`
-  display: flex;
   padding: 0px 4px;
   flex-direction: column;
-  flex: 1 0 0;
+  flex: 1 1 auto;
   ${TEXT.S};
   color: ${COLOR.LIGHT_GRAY};
   font-family: ${FONTFAMILY.NOTO_SANS};
   gap: 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 `;
 
 const StyledEditButtonWrapper = styled.div`
