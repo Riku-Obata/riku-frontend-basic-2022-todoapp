@@ -1,4 +1,6 @@
+import React from "react";
 import ReactDOM from "react-dom";
 import "./style.css";
+import MainPage from "./components/Pages/MainPage";
 
-ReactDOM.render(<></>, document.getElementById("app"));
+ReactDOM.render(<MainPage />, document.getElementById("app"));
