@@ -26,6 +26,7 @@ export const TodoCard = () => {
     } else {
       const mappedOnTaskNameChange = [...taskList];
       mappedOnTaskNameChange[index].name = value;
+      mappedOnTaskNameChange[index].initializing = false;
       setTaskList(mappedOnTaskNameChange);
     }
   };
