@@ -66,9 +66,7 @@ export const TodoCard = () => {
 export default TodoCard;
 
 const StyledWrapper = styled.div`
-  display: flex;
   padding: 20px;
-  flex-direction: column;
   align-items: flex-start;
   border-radius: 4px;
   background-color: ${COLOR.LIGHT_BLACK};
@@ -78,6 +76,7 @@ const StyledTaskList = styled.div`
   display: flex;
   flex-direction: column;
   align-self: stretch;
+  box-sizing: border-box;
   font-family: ${FONTFAMILY.NOTO_SANS};
 `;
 
