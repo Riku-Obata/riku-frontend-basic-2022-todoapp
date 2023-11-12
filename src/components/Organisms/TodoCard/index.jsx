@@ -30,6 +30,18 @@ export const TodoCard = () => {
     }
   };
 
+  useEffect(() => {
+    const takeData = localStorage.getItem("taskList");
+    if (takeData !== null) {
+      const takeTaskList = JSON.parse(takeData);
+      setTaskList(takeTaskList);
+    }
+  }, []);
+
+  useEffect(() => {
+    const storeTask = localStorage.setItem("taskList");
+  }, [taskList]);
+
   return (
     <StyledWrapper>
       <AddTaskButton onClick={onAddTaskButtonClick} />
