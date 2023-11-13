@@ -32,16 +32,15 @@ export const TodoCard = () => {
   };
 
   useEffect(() => {
-    const takeData = localStorage.getItem("taskList");
-    if (takeData !== null) {
-      const takeTaskList = JSON.parse(takeData);
-      setTaskList(takeTaskList);
+    const storedTaskList = localStorage.getItem("taskList");
+    if (storedTaskList !== null) {
+      const parsedTaskList = JSON.parse(storedTaskList);
+      setTaskList(parsedTaskList);
     }
   }, []);
 
   useEffect(() => {
-    const storeTask = JSON.stringify(taskList);
-    localStorage.setItem("taskList", storeTask);
+    localStorage.setItem("taskList", JSON.stringify(taskList));
   }, [taskList]);
 
   return (
