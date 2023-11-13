@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Task from "../../Molecules/Task";
 import AddTaskButton from "../../Atoms/AddTaskButton";
 import COLOR from "../../../variables/color";
@@ -26,9 +26,22 @@ export const TodoCard = () => {
     } else {
       const mappedOnTaskNameChange = [...taskList];
       mappedOnTaskNameChange[index].name = value;
+      mappedOnTaskNameChange[index].initializing = false;
       setTaskList(mappedOnTaskNameChange);
     }
   };
+
+  useEffect(() => {
+    const storedTaskList = localStorage.getItem("taskList");
+    if (storedTaskList !== null) {
+      const parsedTaskList = JSON.parse(storedTaskList);
+      setTaskList(parsedTaskList);
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("taskList", JSON.stringify(taskList));
+  }, [taskList]);
 
   return (
     <StyledWrapper>
@@ -52,9 +65,7 @@ export const TodoCard = () => {
 export default TodoCard;
 
 const StyledWrapper = styled.div`
-  display: flex;
   padding: 20px;
-  flex-direction: column;
   align-items: flex-start;
   border-radius: 4px;
   background-color: ${COLOR.LIGHT_BLACK};
@@ -64,6 +75,7 @@ const StyledTaskList = styled.div`
   display: flex;
   flex-direction: column;
   align-self: stretch;
+  box-sizing: border-box;
   font-family: ${FONTFAMILY.NOTO_SANS};
 `;
 
