@@ -1,9 +1,9 @@
 import styled from "styled-components";
-import check from "../../../assets/svg/check.svg";
 import React from "react";
 import COLOR from "../../../variables/color";
 import FONTFAMILY from "../../../variables/font_family";
 import TEXT from "../../../variables/texts";
+import BREAKPOINT from "../../../variables/breakpoint";
 
 export const Alert = ({ visible, errorText }) => {
   return (
@@ -15,9 +15,6 @@ export const Alert = ({ visible, errorText }) => {
 export default Alert;
 
 const TaskAlert = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
   position: absolute;
   top: 80px;
   left: 50%;
@@ -37,6 +34,11 @@ const TaskAlert = styled.div`
       ? `{ opacity: 1;
        transform: translateX(-50%) translateY(0) }`
       : ``}
+
+  @media screen and (max-width: ${BREAKPOINT.MEDIUM}) {
+    top: 40px;
+    max-width: 320px;
+  }
 `;
 
 const TextAlert = styled.div`
