@@ -9,11 +9,17 @@ export const AlertHandlerProvider = ({ children }) => {
   });
 
   const setAlert = (errorText) => {
-    // TODO: ここを埋める
+    setAlertState({
+      visible: true,
+      errorText: errorText,
+    });
   };
 
   const closeAlert = () => {
-    // TODO: ここを埋める
+    setAlertState({
+      ...alertState,
+      visible: false,
+    });
   };
 
   const contextValue = {
