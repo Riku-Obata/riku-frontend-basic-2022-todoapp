@@ -4,6 +4,7 @@ import Task from "../../Molecules/Task";
 import AddTaskButton from "../../Atoms/AddTaskButton";
 import COLOR from "../../../variables/color";
 import FONTFAMILY from "../../../variables/font_family";
+import AlertManager from "../AlertManager";
 
 export const TodoCard = () => {
   const [taskList, setTaskList] = useState([]);
@@ -22,6 +23,7 @@ export const TodoCard = () => {
       const filteredOnTaskNameChange = taskList.filter(
         (_, idx) => idx !== index
       );
+      AlertManager();
       setTaskList(filteredOnTaskNameChange);
     } else {
       const mappedOnTaskNameChange = [...taskList];
@@ -56,6 +58,7 @@ export const TodoCard = () => {
               taskName={task.name}
               defaultIsEditing={task.initializing}
             />
+            <AlertManager />
           </TaskGap>
         ))}
       </StyledTaskList>
