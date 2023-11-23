@@ -5,6 +5,7 @@ import AddTaskButton from "../../Atoms/AddTaskButton";
 import COLOR from "../../../variables/color";
 import FONTFAMILY from "../../../variables/font_family";
 import AlertManager from "../AlertManager";
+import { useAlertHandlerContext } from "../../../contexts/alert_handler";
 
 export const TodoCard = () => {
   const [taskList, setTaskList] = useState([]);
@@ -23,7 +24,6 @@ export const TodoCard = () => {
       const filteredOnTaskNameChange = taskList.filter(
         (_, idx) => idx !== index
       );
-      AlertManager();
       setTaskList(filteredOnTaskNameChange);
     } else {
       const mappedOnTaskNameChange = [...taskList];
