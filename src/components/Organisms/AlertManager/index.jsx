@@ -7,13 +7,11 @@ export const AlertManager = () => {
 
   useEffect(() => {
     if (AlertHandlerContext.visible === true) {
-      AlertHandlerContext.setAlert("message");
+      setTimeout(() => {
+        AlertHandlerContext.closeAlert();
+      }, 5000);
     }
-
-    setTimeout(() => {
-      AlertHandlerContext.closeAlert("message");
-    }, 5000);
-  }, []);
+  }, [AlertHandlerContext]);
 
   return (
     <Alert

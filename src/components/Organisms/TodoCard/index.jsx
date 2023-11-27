@@ -9,6 +9,7 @@ import { useAlertHandlerContext } from "../../../contexts/alert_handler";
 
 export const TodoCard = () => {
   const [taskList, setTaskList] = useState([]);
+  const AlertHandlerContext = useAlertHandlerContext();
 
   const onAddTaskButtonClick = () => {
     setTaskList([...taskList, { name: "", initializing: true }]);
