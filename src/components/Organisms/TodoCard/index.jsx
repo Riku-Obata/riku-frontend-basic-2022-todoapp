@@ -25,6 +25,7 @@ export const TodoCard = () => {
       const filteredOnTaskNameChange = taskList.filter(
         (_, idx) => idx !== index
       );
+      AlertHandlerContext.setAlert("タスクの名前が設定されていません。");
       setTaskList(filteredOnTaskNameChange);
     } else {
       const mappedOnTaskNameChange = [...taskList];
