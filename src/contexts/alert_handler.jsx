@@ -10,6 +10,7 @@ export const AlertHandlerProvider = ({ children }) => {
 
   const setAlert = (errorText) => {
     setAlertState({
+      ...alertState,
       visible: true,
       errorText: errorText,
     });
