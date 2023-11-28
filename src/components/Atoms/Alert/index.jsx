@@ -20,7 +20,6 @@ const TaskAlert = styled.div`
   left: 50%;
   width: 100%;
   max-width: 400px;
-  padding: 10px 20px;
   gap: 10px;
   border-radius: 4px;
   transition: 0.5s;
@@ -37,11 +36,13 @@ const TaskAlert = styled.div`
 
   @media screen and (max-width: ${BREAKPOINT.MEDIUM}) {
     top: 40px;
-    max-width: 320px;
+    left: 51%;
+    max-width: 280px;
   }
 `;
 
 const TextAlert = styled.div`
   color: ${COLOR.WHITE};
   ${TEXT.S};
+  padding: 10px 20px;
 `;
