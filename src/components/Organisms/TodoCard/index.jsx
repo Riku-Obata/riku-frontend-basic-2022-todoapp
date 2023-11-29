@@ -4,9 +4,12 @@ import Task from "../../Molecules/Task";
 import AddTaskButton from "../../Atoms/AddTaskButton";
 import COLOR from "../../../variables/color";
 import FONTFAMILY from "../../../variables/font_family";
+import AlertManager from "../AlertManager";
+import { useAlertHandlerContext } from "../../../contexts/alert_handler";
 
 export const TodoCard = () => {
   const [taskList, setTaskList] = useState([]);
+  const AlertHandlerContext = useAlertHandlerContext();
 
   const onAddTaskButtonClick = () => {
     setTaskList([...taskList, { name: "", initializing: true }]);
@@ -22,6 +25,7 @@ export const TodoCard = () => {
       const filteredOnTaskNameChange = taskList.filter(
         (_, idx) => idx !== index
       );
+      AlertHandlerContext.setAlert("タスクの名前が設定されていません。");
       setTaskList(filteredOnTaskNameChange);
     } else {
       const mappedOnTaskNameChange = [...taskList];
@@ -56,6 +60,7 @@ export const TodoCard = () => {
               taskName={task.name}
               defaultIsEditing={task.initializing}
             />
+            <AlertManager />
           </TaskGap>
         ))}
       </StyledTaskList>
